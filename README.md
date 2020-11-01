@@ -23,6 +23,14 @@ bundle install
 yarn add @mainkatz/image-input
 ```
 
+Register Stimulus controller. By default in Rails, this is in `controllers/index.js`.
+
+```js
+import ImageInputController from '@mainkatz/dropzone-input';
+
+application.register('image-input', ImageInputController);
+```
+
 ## Development
 
 To develop this locally you can update your Gemfile:
