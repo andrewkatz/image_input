@@ -20,7 +20,7 @@ jobs:
         touch $HOME/.gem/credentials
         chmod 0600 $HOME/.gem/credentials
         printf -- "---\n:rubygems_api_key: \"${{ secrets.RUBYGEMS_AUTH_TOKEN }}\"\n" > $HOME/.gem/credentials
-    - run: gem build dropzone_input.gemspec
+    - run: gem build image_input.gemspec
     - uses: actions/upload-artifact@v2
       with:
         name: gem
@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: '12.x'
         registry-url: https://registry.npmjs.org/
-        scope: '@darkroom-com'
+        scope: '@andrewkatz'
     - run: npm install
     - run: npm pack
     - uses: actions/upload-artifact@v2

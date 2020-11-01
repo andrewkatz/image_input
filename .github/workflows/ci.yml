@@ -15,7 +15,7 @@ jobs:
       id: versions
       run: |
         NPM_VERSION=$(cat package.json | jq -r '.version')
-        GEM_VERSION=$(cat lib/dropzone_input/version.rb | awk '/VERSION/{ print $3 }' | tr -d "'")
+        GEM_VERSION=$(cat lib/image_input/version.rb | awk '/VERSION/{ print $3 }' | tr -d "'")
         echo "npm version: $NPM_VERSION, rubygems version: $GEM_VERSION"
         test $NPM_VERSION == $GEM_VERSION
         echo "::set-output name=version::$NPM_VERSION"
@@ -39,20 +39,20 @@ jobs:
       id: published-release
       run: |
         ID=$(curl --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          https://api.github.com/repos/darkroom-com/dropzone_input/releases | jq '.[] | select(.tag_name == "v${{ steps.version.outputs.version }}" and .draft == false) | .id')
+          https://api.github.com/repos/andrewkatz/image_input/releases | jq '.[] | select(.tag_name == "v${{ steps.version.outputs.version }}" and .draft == false) | .id')
         echo "::set-output name=id::$ID"
     - name: Check if draft release exists
       id: release
       run: |
         ID=$(curl --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          https://api.github.com/repos/darkroom-com/dropzone_input/releases | jq '.[] | select(.tag_name == "v${{ steps.version.outputs.version }}" and .draft) | .id')
+          https://api.github.com/repos/andrewkatz/image_input/releases | jq '.[] | select(.tag_name == "v${{ steps.version.outputs.version }}" and .draft) | .id')
         echo "::set-output name=id::$ID"
     - name: Delete previous release
       if: steps.release.outputs.id
       run: |
         curl --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           -X DELETE \
-          https://api.github.com/repos/darkroom-com/dropzone_input/releases/${{ steps.release.outputs.id }}
+          https://api.github.com/repos/andrewkatz/image_input/releases/${{ steps.release.outputs.id }}
     - name: Get version changes
       if: ${{ ! steps.published-release.outputs.id }}
       run: |
