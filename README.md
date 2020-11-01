@@ -2,6 +2,14 @@
 
 A Rails helper for a simple, clean image input for use with Active Storage.
 
+Example usage:
+
+```ruby
+class User < ApplicationRecord
+  has_one_attached :profile_picture
+end
+```
+
 ```erb
 <%= form_with(model: User.new) do |form| %>
   <%= image_input form, :profile_picture %>
