@@ -1,0 +1,28 @@
+<div data-controller="image-input">
+  <%= form.file_field(
+    field,
+    class: 'hidden',
+    data: {
+      target: 'image-input.field',
+      action: 'change->image-input#onFileChosen'
+    }
+  ) %>
+
+  <% if form.object.public_send(field).attached? %>
+    <%= image_tag(
+      form.object.public_send(field).variant(resize_to_limit: [300, 300]),
+      data: { target: 'image-input.image' },
+      class: 'rounded-md mb-4'
+    ) %>
+  <% end %>
+
+  <a
+    href="#"
+    class="border border-transparent cursor-pointer duration-150 ease-in-out focus:outline-none font-bold inline-block leading-5 px-4 py-2 rounded-md text-sm transition active:bg-gray-50 active:text-gray-800 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-600 text-gray-800 mr-4"
+    data-action="click->image-input#chooseFile"
+    data-target="image-input.button"
+    >
+    <%= form.object.public_send(field).attached? ? 'Change' : 'Choose file' %>
+  </a>
+  <span class="hidden font-mono text-sm" data-target="image-input.fileNameLabel"></span>
+</div>

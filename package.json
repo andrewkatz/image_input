@@ -1,0 +1,54 @@
+{
+  "name": "@andrewkatz/image-input",
+  "version": "0.0.1",
+  "description": "Javascript counterpart for image_input gem.",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "external": "stimulus",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -wc",
+    "build": "npm run lint && npm run build:clean && npm run build:babel",
+    "build:clean": "rm -rf ./dist",
+    "build:babel": "mkdir -p dist && rollup -c",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewkatz/image_input.git"
+  },
+  "author": "Andrew Katz <andrew.katz@hey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewkatz/image_input/issues"
+  },
+  "homepage": "https://github.com/andrewkatz/image_input#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-classes": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "rollup": "^2.19.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "stimulus": "^1.1.1"
+  },
+  "peerDependencies": {
+    "stimulus": "^1.1.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -1,0 +1,81 @@
+Arguments: 
+  /usr/local/Cellar/node/15.0.1/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js
+
+PATH: 
+  /usr/local/heroku/bin:/usr/local/bin:/usr/local/opt/terraform@0.12/bin:/usr/local/opt/python/libexec/bin:/Users/andrewkatz/.yarn/bin:/Users/andrewkatz/.config/yarn/global/node_modules/.bin:/usr/local/gradle/bin:/usr/local/sbin:/usr/local/share/npm/bin:./bin:./.bin:/Applications/MAMP/bin/php/php5.5.10/bin:/Users/andrewkatz/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/tools:/tools/bin:/platform-tools:/Users/andrewkatz/.pub-cache/bin:/Users/andrewkatz/.composer/vendor/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.0.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/andrewkatz/dev/image_input/package.json: Unexpected token } in JSON at position 1533
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "@andrewkatz/image-input",
+    "version": "0.0.1",
+    "description": "Javascript counterpart for image_input gem.",
+    "main": "dist/index.js",
+    "umd:main": "dist/index.umd.js",
+    "module": "dist/index.m.js",
+    "external": "stimulus, @rails/activestorage",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "rollup -wc",
+      "build": "npm run lint && npm run build:clean && npm run build:babel",
+      "build:clean": "rm -rf ./dist",
+      "build:babel": "mkdir -p dist && rollup -c",
+      "prepublishOnly": "npm run build",
+      "lint": "eslint src/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/andrewkatz/image_input.git"
+    },
+    "author": "Andrew Katz <andrew.katz@hey.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/andrewkatz/image_input/issues"
+    },
+    "homepage": "https://github.com/andrewkatz/image_input#readme",
+    "devDependencies": {
+      "@babel/cli": "^7.10.4",
+      "@babel/core": "^7.10.4",
+      "@babel/plugin-proposal-class-properties": "^7.10.4",
+      "@babel/plugin-transform-classes": "^7.10.4",
+      "@babel/preset-env": "^7.10.4",
+      "@babel/register": "^7.10.4",
+      "@rails/activestorage": "^6.0.0",
+      "babel-eslint": "^10.1.0",
+      "eslint": "^7.4.0",
+      "rollup": "^2.19.0",
+      "rollup-plugin-babel": "^4.4.0",
+      "rollup-plugin-filesize": "^9.0.2",
+      "rollup-plugin-node-resolve": "^5.2.0",
+      "stimulus": "^1.1.1"
+    },
+    "peerDependencies": {
+      "@rails/activestorage": "^6.0.0",
+      "stimulus": "^1.1.1",
+    },
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com/"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
