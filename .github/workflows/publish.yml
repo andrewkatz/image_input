@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: '12.x'
         registry-url: https://registry.npmjs.org/
-        scope: '@andrewkatz'
+        scope: '@mainkatz'
     - run: npm install
     - run: npm pack
     - uses: actions/upload-artifact@v2
