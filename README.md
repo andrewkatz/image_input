@@ -20,7 +20,7 @@ gem 'image_input'
 
 ```sh
 bundle install
-yarn add @andrewkatz/image-input
+yarn add @mainkatz/image-input
 ```
 
 ## Development
@@ -40,7 +40,7 @@ yarn link
 In your app project run:
 
 ```sh
-yarn link @andrewkatz/image-input
+yarn link @mainkatz/image-input
 ```
 
 To auto-recompile this project, run:

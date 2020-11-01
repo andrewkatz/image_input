@@ -23,7 +23,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "@andrewkatz/image-input",
+    "name": "@mainkatz/image-input",
     "version": "0.0.1",
     "description": "Javascript counterpart for image_input gem.",
     "main": "dist/index.js",
