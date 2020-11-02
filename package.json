@@ -1,6 +1,6 @@
 {
   "name": "@mainkatz/image-input",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Javascript counterpart for image_input gem.",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
