@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2020-11-02
+### Added
+- Limit file types on file field, defaults to PNG, JPEG, and GIF.
+- Show filename when blob is attached.
+
+### Fixed
+- Only try to render the blob if it's an image.
+
 ## [0.0.3] - 2020-11-01
 ### Fixed
 - Fixed uninitialized constant when loading gem

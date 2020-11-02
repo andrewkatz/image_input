@@ -2,15 +2,16 @@
   <%= form.file_field(
     field,
     class: 'hidden',
+    accept: accept,
     data: {
       target: 'image-input.field',
       action: 'change->image-input#onFileChosen'
     }
   ) %>
 
-  <% if form.object.public_send(field).attached? %>
+  <% if blob.attached? && blob.image? %>
     <%= image_tag(
-      form.object.public_send(field).variant(resize_to_limit: [300, 300]),
+      blob.variant(resize_to_limit: [300, 300]),
       data: { target: 'image-input.image' },
       class: 'rounded-md mb-4'
     ) %>
@@ -22,7 +23,9 @@
     data-action="click->image-input#chooseFile"
     data-target="image-input.button"
     >
-    <%= form.object.public_send(field).attached? ? 'Change' : 'Choose file' %>
+    <%= blob.attached? ? 'Change' : 'Choose file' %>
   </a>
-  <span class="hidden font-mono text-sm" data-target="image-input.fileNameLabel"></span>
+  <span class="<%= 'hidden' unless blob.attached? %> font-mono text-sm" data-target="image-input.fileNameLabel">
+    <%= blob.try(:filename) %>
+  </span>
 </div>
