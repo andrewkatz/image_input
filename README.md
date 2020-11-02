@@ -2,6 +2,8 @@
 
 A Rails helper for a simple, clean image input for use with Active Storage.
 
+![Example](example.png)
+
 Example usage:
 
 ```ruby
