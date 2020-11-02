@@ -2,7 +2,7 @@
 
 A Rails helper for a simple, clean image input for use with Active Storage.
 
-![Example](example.png | width=72)
+<img src="example.png" width="314" height="269" />
 
 Example usage:
 
