@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] 2021-01-28
+### Added
+- Configurable CSS classes.
+
 ## [0.0.5] - 2020-11-02
 ### Added
 - Enable direct upload by default.
